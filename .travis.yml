@@ -12,4 +12,4 @@ script:
   - docker run -e CI=true min/react npm run test -- --coverage
 
 after_success:
-  - echo "test success"
+  - echo "test success change"
