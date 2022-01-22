@@ -6,7 +6,7 @@ services: docker
 
 before_install:
   - echo "starting create image"
-  - docker build -t min/react -f Dockerfild.dev .
+  - docker build -t min/react -f Dockerfile.dev .
 
 script:
   - docker run -e CI=true min/react npm run test -- --coverage
