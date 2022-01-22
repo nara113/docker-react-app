@@ -1,0 +1,15 @@
+sudo: required
+
+language: generic
+
+services: docker
+
+before_install:
+  - echo "starting create image"
+  - docker build -t min/react -f Dockerfild.dev .
+
+script:
+  - docker run -e CI=true min/react npm run test -- --coverage
+
+after_success:
+  - echo "test success"
